@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400&display=swap');
+@font-face {
+    font-family: Norse-bold;
+    src: url(Norse-Bold.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
-    --image-width: 30vw;
+    --image-width: max(300px, 33vw);
     --image-height: 100vh;
+    --default-padding: 40px;
 }
 
 body{
@@ -14,7 +21,7 @@ body{
     float: left;
 }
 
-img {
+img.photo {
     width: var(--image-width);
     height: var(--image-height);
 }
@@ -24,10 +31,26 @@ img {
 }
 
 .image-overlay {
+    font-family: Norse-bold, 'Mulish', sans-serif;
+    font-size: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 30%;
-    left: 15%;
-    transform: translate(-50%, -50%);
+    top: 21vh;
+    left: 0;
+    height: 120px;
+    width: var(--image-width);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.odin-logo {
+    top: 0.5;
+    left: 0;
+    color: rgb(255, 255, 255);
+    height: 110px;
+    width: auto;
 }
 
 .credit {
@@ -35,21 +58,111 @@ img {
     top: 98vh;
     left: 15%;
     transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
 }
 
 .sign-up {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(99vw - var(--image-width)); /* change vw to 100 and remove border */
+    font-family: 'Mulish', sans-serif;
+    width: calc(100vw - var(--image-width)); /* change vw to 100 and remove border */
     height: 100vh;
-    border: 1px solid black;
     background-color: rgb(250, 250, 250);
+}
+
+.main-text, .sub-text {
+    padding: 0px calc(3 * var(--default-padding)) calc(var(--default-padding) - 10px) var(--default-padding);
+    font-size: 24px;
+}
+
+.sub-text {
+    padding-bottom: calc(var(--default-padding) + 10px);
 }
 
 .form-container {
     background-color: white;
     box-shadow: 0px 5px 10px rgb(168, 168, 168, 0.5);
+    height: 288px;
+    overflow: hidden;
+}
+
+.form-text {
+    padding: 10px var(--default-padding);
+    font-size: 25px;
+}
+
+input{
+    width: 15vw;
+    height: 3.5vh;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 2px;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+input:focus {
+    background-color: rgb(219, 248, 255);
+    border-color: rgb(0, 0, 0);
+    outline: none;
+}
+
+input:invalid {
+  border-color: none;
+  box-shadow: none;
+}
+
+input:valid{
+    border-color: rgb(108, 184, 85);
+}
+  
+
+.all-forms {
+    display: flex;
+    flex-flow: row wrap;
+    color: rgba(27, 27, 27, 0.829);
+    column-gap: 80px;
+    row-gap: 20px;
+    padding: 0.5vw min(150px, 9vw) var(--default-padding) var(--default-padding);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+::placeholder {
+    font-size: 17px;
+    color: rgb(139, 139, 139);
+}
+
+button.create-account {
+    font-size: 17px;
+    font-weight: 600;
+    border: 2x solid rgb(25, 176, 199);
+    background-color: rgba(1,107,123);
+    color: rgba(237,248,254);
+    border-radius: 6px;
+    width: 13vw;
+    height: 6vh;
+}
+
+.create-account-button-container {
+    padding: var(--default-padding) 0px var(--default-padding) var(--default-padding);
+}
+
+.log-in {
+    font-size: 15px;
+    padding-left: var(--default-padding);
+}
+
+a, a:hover, a:focus, a:active {
+    color: inherit;
+}
+
+.log-in-link {
+    text-decoration: none;
+    color: rgba(1,107,123);
 }
 
 
